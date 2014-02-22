@@ -1,26 +1,38 @@
-# gulp-export [![Build Status](https://secure.travis-ci.org/mathisonian/gulp-export.png?branch=master)](http://travis-ci.org/mathisonian/gulp-export)
+# gulp-export 
 
 module.export the contents of a file
 
 ## Getting Started
-Install the module with: `npm install gulp-export`
+Install the module with: `npm install --save-dev gulp-export`
 
 ```javascript
 var gulp-export = require('gulp-export');
-gulp-export.awesome(); // "awesome"
+
+gulp.task('data', function() {
+    return gulp.src('data/**/*.json')
+        .pipe(exportAsModule())
+        .pipe(gulp.dest('./src/js/data'));
+});
 ```
 
-## Documentation
-_(Coming soon)_
+This will transform a file like
 
-## Examples
-_(Coming soon)_
+```js
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+{
+  'key': 'value'
+}
+```
 
-## Release History
-_(Nothing yet)_
+to 
+
+```js
+module.exports = {
+  'key': 'value'
+}
+```
+
+so that you can use this files, e.g. in conjunction with browserify.
 
 ## License
 Copyright (c) 2014 Matthew Conlen. Licensed under the MIT license.
