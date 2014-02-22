@@ -6,7 +6,7 @@ module.export the contents of a file
 Install the module with: `npm install --save-dev gulp-export`
 
 ```javascript
-var gulp-export = require('gulp-export');
+var exportAsModule = require('gulp-export');
 
 gulp.task('data', function() {
     return gulp.src('data/**/*.json')
