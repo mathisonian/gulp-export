@@ -32,7 +32,7 @@ module.exports = {
 }
 ```
 
-so that you can use this files, e.g. in conjunction with browserify.
+so that you can use this file, e.g. in conjunction with browserify.
 
 ## License
 Copyright (c) 2014 Matthew Conlen. Licensed under the MIT license.
